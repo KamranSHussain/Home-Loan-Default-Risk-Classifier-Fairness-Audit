@@ -1,4 +1,3 @@
-```markdown
 # Sex-Based Algorithmic Fairness & Causal AI Risk Audit of Credit Risk ADS
 
 This repository contains a comprehensive algorithmic fairness audit and causal risk analysis of an Automated Decision System (ADS) developed for the **Home Credit Default Risk** Kaggle competition. Since access to credit is a vital pillar of economic mobility, this project evaluates individual and group fairness across sex demographics to identify bias, quantify uncertainty, and map causal mechanisms within complex machine learning frameworks.
@@ -26,7 +25,7 @@ This repository contains a comprehensive algorithmic fairness audit and causal r
 
 ---
 
-## 🚀 Installation & Prerequisites
+## Installation & Prerequisites
 
 To set up your local environment and reproduce the fairness audit, ensure you have Python 3.10+ installed along with the required libraries.
 

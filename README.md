@@ -26,7 +26,7 @@ The baseline LightGBM model exhibited severe demographic disparities due to hist
 ### 2. Causal AI & Counterfactual Fairness (`DoWhy`)
 Observational group metrics alone cannot prove a model has stopped using hidden proxy variables. To establish mathematical proof of fairness, we mapped the system into a **Structural Causal Model (SCM)** using Directed Acyclic Graphs (DAGs).
 * **ATE Minimization**: Isolated and estimated the Average Treatment Effect (ATE) of an applicant's sex on final classifications. The interventions successfully neutralized the baseline causal effect of **-0.079** down to a statistically negligible **-0.008**. 
-* **Causal Refutation Testing**: Subjected the ATE to a rigorous **Placebo Treatment refutation test**. Replacing the true protected attribute with a random placebo yielded a new effect of **0.000066** with a **p-value of 0.88**, failing to reject the null hypothesis and proving that the final model achieves robust counterfactual fairness.
+* **Causal Refutation Testing**: Subjected the SCM to a comprehensive trio of invariance stress tests to confirm stability. Introducing a **Random Common Cause** left the true effect virtually unchanged at -0.0079 (p-value = 0.94); bootstrapping a 90% **Data Subset** proved data-distribution stability with an effect of -0.0075 (p-value = 0.66); and substituting a **Placebo Treatment** collapsed the effect to absolute zero (0.000066, p-value = 0.88). These combined results fail to reject their respective null hypotheses, statistically validating that the estimated ATE is robust.
 
 ### 3. Uncertainty Quantification (`Split Conformal Prediction`)
 To audit how confidently the model treats different demographic groups, we deployed a **Split Conformal Prediction** framework.
